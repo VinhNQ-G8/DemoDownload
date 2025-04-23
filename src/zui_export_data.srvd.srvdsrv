@@ -1,0 +1,4 @@
+@EndUserText.label: 'Export Service Definition'
+define service ZUI_EXPORT_DATA {
+  expose ZC_EXPORT_DATA as ExportData;
+} 

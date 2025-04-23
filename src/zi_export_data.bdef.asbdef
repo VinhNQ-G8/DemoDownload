@@ -1,0 +1,32 @@
+managed implementation in class zbp_export_data unique;
+strict ( 2 );
+
+define behavior for ZI_EXPORT_DATA alias ExportData
+persistent table zexport_data
+lock master
+authorization master ( instance )
+etag master local_last_changed_at
+{
+  create;
+  update;
+  delete;
+
+  // Custom action để trigger export
+  action ( features : instance ) exportToFile result [1] $self;
+
+  field ( readonly ) export_id, created_by, created_at, last_changed_by, last_changed_at, local_last_changed_at;
+  field ( mandatory ) filename;
+
+  mapping for zexport_data
+  {
+    export_id = export_id;
+    filename = filename;
+    status = status;
+    message = message;
+    created_by = created_by;
+    created_at = created_at;
+    last_changed_by = last_changed_by;
+    last_changed_at = last_changed_at;
+    local_last_changed_at = local_last_changed_at;
+  }
+} 

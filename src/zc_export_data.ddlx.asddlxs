@@ -1,0 +1,27 @@
+@Metadata.layer: #CORE
+annotate view ZC_EXPORT_DATA with
+{
+  @UI.facet: [
+    { id:            'Export',
+      purpose:       #STANDARD,
+      type:         #IDENTIFICATION_REFERENCE,
+      label:        'Export Information',
+      position:     10 }
+  ]
+
+  @UI.lineItem: [{ position: 10 }]
+  @UI.identification: [{ position: 10 }]
+  export_id;
+
+  @UI.lineItem: [{ position: 20 }]
+  @UI.identification: [{ position: 20 }]
+  filename;
+
+  @UI.lineItem: [{ position: 30 }]
+  @UI.identification: [{ position: 30 }]
+  status;
+
+  @UI.lineItem: [{ position: 40 }]
+  @UI.identification: [{ position: 40 }]
+  message;
+} 
