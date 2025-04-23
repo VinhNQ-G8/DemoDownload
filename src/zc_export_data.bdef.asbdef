@@ -1,5 +1,6 @@
 projection;
 strict ( 2 );
+use draft;
 
 define behavior for ZC_EXPORT_DATA alias ExportData
 use etag
@@ -9,4 +10,10 @@ use etag
   use delete;
 
   use action exportToFile;
+
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Resume;
+  use action Prepare;
 } 

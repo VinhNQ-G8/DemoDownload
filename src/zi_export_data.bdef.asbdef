@@ -1,9 +1,12 @@
 managed implementation in class zbp_export_data unique;
 strict ( 2 );
+with draft;
 
 define behavior for ZI_EXPORT_DATA alias ExportData
 persistent table zexport_data
+draft table zexport_data_d
 lock master
+total etag local_last_changed_at
 authorization master ( instance )
 etag master local_last_changed_at
 {
@@ -13,6 +16,13 @@ etag master local_last_changed_at
 
   // Custom action để trigger export
   action ( features : instance ) exportToFile result [1] $self;
+
+  // Draft actions
+  draft action Edit;
+  draft action Activate;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
 
   field ( readonly ) export_id, created_by, created_at, last_changed_by, last_changed_at, local_last_changed_at;
   field ( mandatory ) filename;
