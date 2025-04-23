@@ -15,6 +15,12 @@
       <TYPE>text/plain</TYPE>
       <TITLE>Source Content</TITLE>
      </item>
+     <item>
+      <HREF>./zc_export_data.bdef.xml</HREF>
+      <REL>./zc_export_data.bdef.xml</REL>
+      <TYPE>text/xml</TYPE>
+      <TITLE>XML Content</TITLE>
+     </item>
     </LINKS>
     <MASTER_LANGUAGE>EN</MASTER_LANGUAGE>
     <ABAP_LANGU_VERSION>5</ABAP_LANGU_VERSION>
@@ -22,6 +28,8 @@
     <SOURCE_TYPE>ABAP</SOURCE_TYPE>
     <SOURCE_FIXED_POINT_ARITHMETIC>true</SOURCE_FIXED_POINT_ARITHMETIC>
     <SOURCE_UNICODE_CHECKS_ACTIVE>true</SOURCE_UNICODE_CHECKS_ACTIVE>
+    <USE_DRAFT>X</USE_DRAFT>
+    <IS_PROJECTION>X</IS_PROJECTION>
    </BDEF>
   </asx:values>
  </asx:abap>
