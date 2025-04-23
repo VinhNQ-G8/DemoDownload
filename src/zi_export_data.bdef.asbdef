@@ -24,6 +24,12 @@ etag master local_last_changed_at
   draft action Resume;
   draft determine action Prepare;
 
+  // Validations
+  validation validateFileName on save { field filename; }
+
+  // Determinations
+  determination determineSemanticKey on modify { create; }
+
   field ( readonly ) export_id, created_by, created_at, last_changed_by, last_changed_at, local_last_changed_at;
   field ( mandatory ) filename;
 

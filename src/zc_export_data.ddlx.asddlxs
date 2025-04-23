@@ -9,19 +9,49 @@ annotate view ZC_EXPORT_DATA with
       position:     10 }
   ]
 
-  @UI.lineItem: [{ position: 10 }]
-  @UI.identification: [{ position: 10 }]
+  @UI.lineItem: [
+    { position: 10 },
+    { type: #FOR_ACTION, dataAction: 'exportToFile', label: 'Export to File', position: 1 }
+  ]
+  @UI.identification: [
+    { position: 10 },
+    { type: #FOR_ACTION, dataAction: 'exportToFile', label: 'Export to File', position: 1 }
+  ]
   export_id;
 
   @UI.lineItem: [{ position: 20 }]
   @UI.identification: [{ position: 20 }]
   filename;
 
-  @UI.lineItem: [{ position: 30 }]
-  @UI.identification: [{ position: 30 }]
+  @UI.lineItem: [
+    { position: 30 },
+    { criticality: 'status',
+      criticalityRepresentation: #WITH_ICON }
+  ]
+  @UI.identification: [
+    { position: 30 },
+    { criticality: 'status',
+      criticalityRepresentation: #WITH_ICON }
+  ]
+  @UI.textArrangement: #TEXT_ONLY
   status;
 
   @UI.lineItem: [{ position: 40 }]
   @UI.identification: [{ position: 40 }]
   message;
+
+  @UI.hidden: true
+  created_by;
+
+  @UI.hidden: true
+  created_at;
+
+  @UI.hidden: true
+  last_changed_by;
+
+  @UI.hidden: true
+  last_changed_at;
+
+  @UI.hidden: true
+  local_last_changed_at;
 } 
